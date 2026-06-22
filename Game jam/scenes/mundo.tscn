@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b1mfaawijjhax"]
 
 [ext_resource type="Texture2D" uid="uid://crp1b0bpj5tjc" path="res://brackeys_platformer_assets/sprites/world_tileset.png" id="1_a2ps7"]
+[ext_resource type="Script" uid="uid://ckhqxf1i4kowi" path="res://scenes/game_manager.gd" id="1_vwj67"]
 [ext_resource type="PackedScene" uid="uid://ca46cr333ndl7" path="res://scenes/player.tscn" id="1_wqn8j"]
 [ext_resource type="Script" uid="uid://bno3y6ade8nut" path="res://scenes/rotation_map.gd" id="2_0vka0"]
 [ext_resource type="PackedScene" uid="uid://dmhj2moo1m8u6" path="res://scenes/coin.tscn" id="4_yi5ae"]
@@ -180,6 +181,10 @@ sources/0 = SubResource("TileSetAtlasSource_0vka0")
 
 [node name="Mundo" type="Node2D" unique_id=761029203]
 
+[node name="GameManager" type="Node" parent="." unique_id=1757922471]
+unique_name_in_owner = true
+script = ExtResource("1_vwj67")
+
 [node name="mapa" type="TileMap" parent="." unique_id=360062270]
 z_index = -4096
 tile_set = SubResource("TileSet_yi5ae")
@@ -187,14 +192,14 @@ format = 2
 layer_0/tile_data = PackedInt32Array(65532, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, -65531, 0, 0, -131067, 0, 0, -196603, 0, 0, -262139, 0, 0, -327675, 0, 0, -393211, 0, 0, -4, 0, 0, -65540, 0, 0, -131076, 0, 0, -196612, 0, 0, -262148, 0, 0, -327684, 0, 0, -327683, 0, 0, -327682, 0, 0, -327681, 0, 0, -393216, 0, 0, -393215, 0, 0, -393214, 0, 0, -393213, 0, 0, -393212, 0, 0)
 script = ExtResource("2_0vka0")
 
-[node name="Player" parent="." unique_id=197686528 instance=ExtResource("1_wqn8j")]
-position = Vector2(0, -36)
-
-[node name="Area2D" parent="." unique_id=1589457509 instance=ExtResource("4_yi5ae")]
+[node name="Area2D" parent="mapa" unique_id=1589457509 instance=ExtResource("4_yi5ae")]
 position = Vector2(71, -6)
 
-[node name="Area2D2" parent="." unique_id=680725876 instance=ExtResource("4_yi5ae")]
+[node name="Area2D2" parent="mapa" unique_id=680725876 instance=ExtResource("4_yi5ae")]
 position = Vector2(56, -6)
 
-[node name="Area2D3" parent="." unique_id=462010037 instance=ExtResource("4_yi5ae")]
+[node name="Area2D3" parent="mapa" unique_id=462010037 instance=ExtResource("4_yi5ae")]
 position = Vector2(40, -6)
+
+[node name="Player" parent="." unique_id=197686528 instance=ExtResource("1_wqn8j")]
+position = Vector2(0, -36)
