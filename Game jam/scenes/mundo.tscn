@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://bno3y6ade8nut" path="res://scripts/rotation_map.gd" id="2_0vka0"]
 [ext_resource type="PackedScene" uid="uid://dmhj2moo1m8u6" path="res://scenes/coin.tscn" id="4_yi5ae"]
 [ext_resource type="PackedScene" uid="uid://jh7k11xbvums" path="res://scenes/fade_transition.tscn" id="7_75jji"]
+[ext_resource type="PackedScene" uid="uid://482vjr66e7p8" path="res://scenes/trampolim2.tscn" id="8_kxyy5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0vka0"]
 texture = ExtResource("1_a2ps7")
@@ -181,7 +182,7 @@ texture = ExtResource("1_a2ps7")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_0vka0")
 
-[node name="Mundo" type="Node2D" unique_id=761029203]
+[node name="Mundo" type="Node2D" unique_id=761029203 groups=["grupo1"]]
 script = ExtResource("1_jaeu2")
 
 [node name="GameManager" type="Node" parent="." unique_id=1757922471]
@@ -194,6 +195,13 @@ tile_set = SubResource("TileSet_yi5ae")
 format = 2
 layer_0/tile_data = PackedInt32Array(65532, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, -65531, 0, 0, -131067, 0, 0, -196603, 0, 0, -262139, 0, 0, -327675, 0, 0, -393211, 0, 0, -4, 0, 0, -65540, 0, 0, -131076, 0, 0, -196612, 0, 0, -262148, 0, 0, -327684, 0, 0, -327683, 0, 0, -327682, 0, 0, -327681, 0, 0, -393216, 0, 0, -393215, 0, 0, -393214, 0, 0, -393213, 0, 0, -393212, 0, 0)
 script = ExtResource("2_0vka0")
+
+[node name="trampolim2" parent="mapa" unique_id=196951057 instance=ExtResource("8_kxyy5")]
+position = Vector2(71, -54)
+rotation = -1.5707964
+
+[node name="trampolim" parent="mapa" unique_id=1503223041 instance=ExtResource("8_kxyy5")]
+position = Vector2(-25, -11)
 
 [node name="Area2D" parent="mapa" unique_id=1589457509 instance=ExtResource("4_yi5ae")]
 position = Vector2(71, -6)
@@ -208,7 +216,7 @@ position = Vector2(40, -6)
 position = Vector2(0, -36)
 
 [node name="fade_transition" parent="." unique_id=393650323 instance=ExtResource("7_75jji")]
-offset_left = -565.0
-offset_top = -357.0
-offset_right = 595.0
-offset_bottom = 295.0
+offset_left = -563.0
+offset_top = -366.0
+offset_right = 597.0
+offset_bottom = 286.0

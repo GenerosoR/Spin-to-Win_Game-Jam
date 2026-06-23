@@ -15,6 +15,10 @@ run/main_scene="uid://sctylr8y601c"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
+[global_group]
+
+grupo1=""
+
 [input]
 
 girar_frente={

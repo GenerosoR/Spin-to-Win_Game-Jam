@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://sctylr8y601c"]
 
 [ext_resource type="Script" uid="uid://ctnti00iwqt5u" path="res://scripts/main_menu.gd" id="1_l6cm7"]
-[ext_resource type="AudioStream" uid="uid://dl1rqe4okn7n0" path="res://scenes/musics/placeholder_gngstyle.mp3" id="2_bqqt6"]
+[ext_resource type="AudioStream" uid="uid://db21efujiso17" path="res://musics/Jam_M2_03.wav" id="2_8ln24"]
 [ext_resource type="PackedScene" uid="uid://jh7k11xbvums" path="res://scenes/fade_transition.tscn" id="2_ekxnf"]
 [ext_resource type="Script" uid="uid://1r1dovcjoah1" path="res://scripts/audio_control.gd" id="4_wu84c"]
 [ext_resource type="Script" uid="uid://boet2xjf7r8ml" path="res://scripts/fullscreen_control.gd" id="5_8ln24"]
@@ -28,7 +28,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="main_buttons" unique_id=1486629615]
-stream = ExtResource("2_bqqt6")
+stream = ExtResource("2_8ln24")
 autoplay = true
 bus = &"Music_menu"
 
