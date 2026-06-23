@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="MapaRolavel"
-run/main_scene="uid://b1mfaawijjhax"
+run/main_scene="uid://sctylr8y601c"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
