@@ -1,12 +1,9 @@
 [gd_scene format=3 uid="uid://482vjr66e7p8"]
 
 [ext_resource type="Script" uid="uid://ddpg7u5m2fdji" path="res://scripts/trampolim_2.gd" id="1_sutd8"]
-[ext_resource type="Texture2D" uid="uid://byrt77h5l0ny6" path="res://Trampoline/Idle.png" id="1_ujq4d"]
-[ext_resource type="Texture2D" uid="uid://ih5quywp8i7q" path="res://Trampoline/Jump (28x28).png" id="2_sutd8"]
+[ext_resource type="Texture2D" uid="uid://byrt77h5l0ny6" path="res://Assets/Trampoline/Idle.png" id="1_ujq4d"]
+[ext_resource type="Texture2D" uid="uid://ih5quywp8i7q" path="res://Assets/Trampoline/Jump (28x28).png" id="2_sutd8"]
 [ext_resource type="Script" uid="uid://b2ge1cijs5fdp" path="res://scripts/area_2d.gd" id="3_klld7"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ahknw"]
-size = Vector2(23, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8vao1"]
 atlas = ExtResource("2_sutd8")
@@ -81,16 +78,12 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gnq5l"]
-size = Vector2(23, 3)
+size = Vector2(25, 8)
 
 [node name="trampolim" type="Node2D" unique_id=1503223041]
 script = ExtResource("1_sutd8")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2070808592]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2049854560]
-position = Vector2(0.5, 4.5)
-shape = SubResource("RectangleShape2D_ahknw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1367657134]
 position = Vector2(1, -4)
@@ -102,7 +95,7 @@ autoplay = "idle"
 script = ExtResource("3_klld7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=164626353]
-position = Vector2(0.5, -0.5)
+position = Vector2(0.5, 6)
 shape = SubResource("RectangleShape2D_gnq5l")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
