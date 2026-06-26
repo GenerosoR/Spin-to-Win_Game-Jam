@@ -1,0 +1,219 @@
+[gd_scene format=3 uid="uid://m7y88wy2s6uf"]
+
+[ext_resource type="Script" uid="uid://bnrmb2s0c3pt5" path="res://scripts/pausa.gd" id="1_3kuwy"]
+[ext_resource type="Script" uid="uid://c72sl3ut1oa7g" path="res://scripts/audio_control_p.gd" id="3_1vvwb"]
+[ext_resource type="Script" uid="uid://boet2xjf7r8ml" path="res://scripts/fullscreen_control.gd" id="3_k5nbw"]
+
+[sub_resource type="Shader" id="Shader_3l2bj"]
+code = "shader_type canvas_item;
+uniform sampler2D SCREEN_TEXTURE: hint_screen_texture, filter_linear_mipmap;
+
+uniform float lod: hint_range(0.0, 5) = 0.0;
+
+void fragment(){
+	vec4 color = texture(SCREEN_TEXTURE, SCREEN_UV, lod);
+	COLOR = color;
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_syhod"]
+shader = SubResource("Shader_3l2bj")
+shader_parameter/lod = 0.0
+
+[sub_resource type="Animation" id="Animation_qtdsr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1vvwb"]
+resource_name = "blur"
+length = 0.33333334
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.800000038]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.33333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k5nbw"]
+_data = {
+&"RESET": SubResource("Animation_qtdsr"),
+&"blur": SubResource("Animation_1vvwb")
+}
+
+[node name="main_buttons" type="Control" unique_id=1204291302]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -181.0
+offset_bottom = -181.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3kuwy")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1297302278]
+process_mode = 3
+material = SubResource("ShaderMaterial_syhod")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -457.0
+offset_right = 576.0
+offset_bottom = 517.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1651869833]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -50.5
+offset_right = 35.0
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1572502053]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="resume" type="Button" parent="PanelContainer/VBoxContainer" unique_id=160972399]
+layout_mode = 2
+text = "Resume"
+
+[node name="Opções" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1430693390]
+layout_mode = 2
+text = "Options"
+
+[node name="Quit" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1692606430]
+process_mode = 3
+layout_mode = 2
+text = "Quit"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1219167331]
+process_mode = 3
+libraries/ = SubResource("AnimationLibrary_k5nbw")
+
+[node name="opcoes" type="Panel" parent="." unique_id=104162888]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -228.0
+offset_top = -143.5
+offset_right = 228.0
+offset_bottom = 143.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Back" type="Button" parent="opcoes" unique_id=2136987953]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -119.5
+offset_top = 83.0
+offset_right = 120.5
+offset_bottom = 143.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Back"
+
+[node name="Label" type="Label" parent="opcoes" unique_id=1239951841]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.5
+offset_right = 456.0
+offset_bottom = 61.5
+theme_override_font_sizes/font_size = 30
+text = "options"
+horizontal_alignment = 1
+
+[node name="Fullscreen_controlP" type="CheckBox" parent="opcoes" unique_id=1570452860]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -114.0
+offset_top = -15.5
+offset_right = 111.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Fullscreen"
+script = ExtResource("3_k5nbw")
+
+[node name="Audio_ControlP" type="HSlider" parent="opcoes" unique_id=507653425]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 81.5
+offset_right = 336.0
+offset_bottom = 97.5
+max_value = 1.0
+step = 0.05
+script = ExtResource("3_1vvwb")
+audio_bus_name = "Theme01"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Opções" to="." method="_on_opções_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="opcoes/Back" to="." method="_on_back_pressed"]
+[connection signal="toggled" from="opcoes/Fullscreen_controlP" to="opcoes/Fullscreen_controlP" method="_on_toggled"]
+[connection signal="value_changed" from="opcoes/Audio_ControlP" to="opcoes/Audio_ControlP" method="_on_value_changed"]

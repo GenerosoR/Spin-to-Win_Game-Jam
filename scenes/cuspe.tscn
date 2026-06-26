@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cn0lfdemjifas"]
+
+[ext_resource type="Script" uid="uid://cc34evji2e3ny" path="res://scripts/cuspe.gd" id="1_exedc"]
+[ext_resource type="Texture2D" uid="uid://bq32487qoqhjd" path="res://Assets/sprites/mole_spit.png" id="2_jpeoj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_exedc"]
+radius = 6.0
+
+[node name="cuspe" type="Area2D" unique_id=55629605]
+script = ExtResource("1_exedc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=314823055]
+position = Vector2(-0.9999995, -0.9999995)
+scale = Vector2(1.8125001, 1.4999999)
+texture = ExtResource("2_jpeoj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2023400839]
+position = Vector2(-1, -1)
+shape = SubResource("CircleShape2D_exedc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
