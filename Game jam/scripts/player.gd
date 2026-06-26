@@ -8,6 +8,9 @@ const JUMP_VELOCITY = -300.0
 var knockback_timer: float = 0.0
 var knockback: Vector2 = Vector2.ZERO
 
+func _ready() -> void:
+	add_to_group("player")
+
 
 func _physics_process(delta: float) -> void:
 
