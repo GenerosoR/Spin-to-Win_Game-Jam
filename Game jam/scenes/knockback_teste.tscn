@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://b4s3deuh25nd2"]
 
 [ext_resource type="Script" uid="uid://ccpqlwlwhiob0" path="res://scripts/knockback_teste.gd" id="1_kiyn2"]
-[ext_resource type="Texture2D" uid="uid://d1y4vhdlmsi52" path="res://Assets/sprites/knockback_placeholder2.png" id="2_syhod"]
+[ext_resource type="Texture2D" uid="uid://6s4e7tptkx8s" path="res://Assets/sprites/bouncer.png" id="2_syhod"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ahknw"]
-size = Vector2(25.25, 17.75)
+size = Vector2(19, 20)
 
 [node name="knockback_teste" type="Node2D" unique_id=1721220457]
 script = ExtResource("1_kiyn2")
@@ -12,12 +12,12 @@ script = ExtResource("1_kiyn2")
 [node name="Area2D" type="Area2D" parent="." unique_id=704651845]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=424585142]
-position = Vector2(-0.375, -0.125)
+position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_ahknw")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=6754482]
-position = Vector2(-0.062499244, -0.06250048)
-scale = Vector2(0.02246094, 0.027584875)
+position = Vector2(0, -1)
+scale = Vector2(0.656901, 0.656901)
 texture = ExtResource("2_syhod")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

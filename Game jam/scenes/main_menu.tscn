@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://sctylr8y601c"]
 
 [ext_resource type="Script" uid="uid://ctnti00iwqt5u" path="res://scripts/main_menu.gd" id="1_l6cm7"]
-[ext_resource type="AudioStream" uid="uid://db21efujiso17" path="res://musics/Jam_M2_03.wav" id="2_8ln24"]
+[ext_resource type="AudioStream" uid="uid://db21efujiso17" path="res://Assets/musics/Jam_M2_03.wav" id="2_8ln24"]
 [ext_resource type="PackedScene" uid="uid://jh7k11xbvums" path="res://scenes/fade_transition.tscn" id="2_ekxnf"]
 [ext_resource type="AudioStream" uid="uid://tv1xpjr47yy7" path="res://Assets/sounds/button_select.wav" id="2_rcqid"]
 [ext_resource type="Texture2D" uid="uid://8g0ff80pt8fh" path="res://Assets/UI SPRITES/title_art.png" id="2_tbmy8"]
