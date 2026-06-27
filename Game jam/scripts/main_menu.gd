@@ -33,7 +33,7 @@ func _on_quit_pressed():
 
 func _on_fade_timer_timeout():
 	if button_type == "start":
-		get_tree().change_scene_to_file("res://scenes/mundo.tscn")
+		get_tree().change_scene_to_file("res://scenes/levels/level0.tscn")
 
 
 func _on_back_opcoes_pressed() -> void:

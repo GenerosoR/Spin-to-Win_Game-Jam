@@ -1,16 +1,24 @@
 extends Node
 
 var score = 0
+var objetivo = 0
+var completo = false
+
 
 func add_point():
 	score += 1
-	print("coins collected: ", score)
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+	print("Coins: ", score)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func completar_objetivo():
+	objetivo -= 1
+	
+	if objetivo <= 0:
+		objetivo = 0
+		completo = true
+		print("Fase completa!")
+
+
+func set_objetivo(valor):
+	objetivo = valor
+	completo = false

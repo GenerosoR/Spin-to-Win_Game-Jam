@@ -15,5 +15,7 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	game_manager.add_point()
-	queue_free()
+	if body.is_in_group("player"):
+		GameManager.add_point()
+		GameManager.completar_objetivo()
+		queue_free()

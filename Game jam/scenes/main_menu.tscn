@@ -1,9 +1,8 @@
 [gd_scene format=3 uid="uid://sctylr8y601c"]
 
 [ext_resource type="Script" uid="uid://ctnti00iwqt5u" path="res://scripts/main_menu.gd" id="1_l6cm7"]
-[ext_resource type="AudioStream" uid="uid://db21efujiso17" path="res://Assets/musics/Jam_M2_03.wav" id="2_8ln24"]
+[ext_resource type="AudioStream" uid="uid://db21efujiso17" path="res://musics/Jam_M2_03.wav" id="2_8ln24"]
 [ext_resource type="PackedScene" uid="uid://jh7k11xbvums" path="res://scenes/fade_transition.tscn" id="2_ekxnf"]
-[ext_resource type="Texture2D" uid="uid://cwk0cd4yg37ep" path="res://Assets/sprites/UI_start_button.png" id="3_rtw2f"]
 [ext_resource type="Script" uid="uid://1r1dovcjoah1" path="res://scripts/audio_control.gd" id="4_wu84c"]
 [ext_resource type="Script" uid="uid://boet2xjf7r8ml" path="res://scripts/fullscreen_control.gd" id="5_8ln24"]
 
@@ -151,22 +150,10 @@ grow_vertical = 2
 text = "Fullscreen"
 script = ExtResource("5_8ln24")
 
-[node name="TextureButton" type="TextureButton" parent="." unique_id=1360469741]
-custom_minimum_size = Vector2(80, 80)
-offset_left = -5.0
-offset_top = -184.0
-offset_right = 75.0
-offset_bottom = -104.0
-pivot_offset = Vector2(40, 40)
-offset_transform_enabled = true
-texture_normal = ExtResource("3_rtw2f")
-ignore_texture_size = true
-stretch_mode = 5
-
 [connection signal="pressed" from="main_buttons/Config" to="." method="_on_config_pressed"]
 [connection signal="pressed" from="main_buttons/Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="main_buttons/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="main_buttons/Start" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="main_buttons/Start" to="." method="_on_start_pressed"]
 [connection signal="timeout" from="fade_transition/fade_timer" to="." method="_on_fade_timer_timeout"]
 [connection signal="pressed" from="opcoes/Back" to="." method="_on_back_opcoes_pressed"]
 [connection signal="value_changed" from="opcoes/Audio_Control" to="." method="_on_audio_control_value_changed"]

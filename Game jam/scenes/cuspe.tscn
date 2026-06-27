@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cc34evji2e3ny" path="res://scripts/cuspe.gd" id="1_exedc"]
 [ext_resource type="Texture2D" uid="uid://bq32487qoqhjd" path="res://Assets/sprites/mole_spit.png" id="2_jpeoj"]
+[ext_resource type="AudioStream" uid="uid://b6kcupp8ap0d8" path="res://Assets/sounds/player_death.wav" id="3_c1wou"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_exedc"]
 radius = 6.0
@@ -17,5 +18,8 @@ texture = ExtResource("2_jpeoj")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2023400839]
 position = Vector2(-1, -1)
 shape = SubResource("CircleShape2D_exedc")
+
+[node name="sfx_death" type="AudioStreamPlayer2D" parent="." unique_id=1434169084]
+stream = ExtResource("3_c1wou")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

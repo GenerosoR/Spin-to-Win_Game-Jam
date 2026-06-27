@@ -1,0 +1,119 @@
+[gd_scene format=4 uid="uid://uwynix46y7t3"]
+
+[ext_resource type="TileSet" uid="uid://sqk3fegvwlw6" path="res://Assets/tileset_main.tres" id="1_467l6"]
+[ext_resource type="Script" uid="uid://bno3y6ade8nut" path="res://scripts/rotation_map.gd" id="2_0yael"]
+[ext_resource type="PackedScene" uid="uid://dmhj2moo1m8u6" path="res://scenes/coin.tscn" id="2_7um5s"]
+[ext_resource type="PackedScene" uid="uid://b4s3deuh25nd2" path="res://scenes/knockback_teste.tscn" id="3_37jyc"]
+[ext_resource type="PackedScene" uid="uid://ca46cr333ndl7" path="res://scenes/player.tscn" id="4_37jyc"]
+
+[node name="Level5" type="Node2D" unique_id=2095498028]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=37210151]
+tile_map_data = PackedByteArray("AAD4/wMAAQAAAAIAAAD4/wIAAQAAAAEAAAD4/wEAAQAAAAEAAAD4/wAAAQAAAAEAAAD4////AQAAAAEAAAD4//7/AQAAAAEAAAD4//3/AQAAAAEAAAD4//v/AQAAAAEAAAD4//z/AQAAAAEAAAD4//r/AQAAAAAAAAD5//r/AQABAAAAAAD6//r/AQABAAAAAAD7//r/AQABAAAAAAD8//r/AQABAAAAAAD9//r/AQABAAAAAAD+//r/AQABAAAAAAD///r/AQABAAAAAAAAAPr/AQABAAAAAAABAPr/AQABAAAAAAACAPr/AQABAAAAAAD5/wMAAQABAAIAAAD6/wMAAQABAAIAAAD7/wMAAQABAAIAAAACAAMAAQABAAIAAAABAAMAAQABAAIAAAAAAAMAAQABAAIAAAD//wMAAQABAAIAAAD+/wMAAQABAAIAAAD9/wMAAQABAAIAAAD8/wMAAQABAAIAAAADAAMAAQABAAIAAAAEAAMAAQABAAIAAAAFAAMAAQABAAIAAAAGAAMAAQABAAIAAAAHAAMAAQABAAIAAAAIAAMAAQABAAIAAAAJAAMAAQABAAIAAAAKAAMAAQABAAIAAAALAAMAAQABAAIAAAAMAAMAAQABAAIAAAANAAMAAQABAAIAAAAOAAMAAQACAAIAAAAFAPr/AQACAAIAAAADAPr/AQABAAAAAAAEAPr/AQABAAAAAAAFAPn/AQACAAEAAAAFAPj/AQACAAEAAAAFAPf/AQACAAEAAAAFAPb/AQACAAEAAAAFAPX/AQACAAEAAAAOAAIAAQAAAAEAAAAOAAEAAQAAAAEAAAAOAP//AQAAAAEAAAAOAP7/AQAAAAEAAAAOAP3/AQAAAAEAAAAOAPz/AQAAAAEAAAAOAPv/AQAAAAEAAAAOAPr/AQAAAAEAAAAOAAAAAQAAAAEAAAAOAPn/AQAAAAAAAAAPAPn/AQABAAAAAAAQAPn/AQABAAAAAAARAPn/AQABAAAAAAASAPn/AQABAAAAAAATAPn/AQABAAAAAAAUAPn/AQABAAAAAAAVAPn/AQABAAAAAAAWAPn/AQABAAAAAAAXAPn/AQACAAIAAAAXAPj/AQACAAEAAAAXAPf/AQACAAEAAAAXAPb/AQACAAEAAAAXAPX/AQACAAEAAAAXAPT/AQACAAEAAAAXAPP/AQACAAEAAAAXAPL/AQACAAAAAAAWAPL/AQABAAAAAAAVAPL/AQABAAAAAAAUAPL/AQABAAAAAAATAPL/AQABAAAAAAASAPL/AQABAAAAAAARAPL/AQABAAAAAAAQAPL/AQABAAAAAAAPAPL/AQABAAAAAAAOAPL/AQAAAAIAAAAOAPH/AQAAAAEAAAAOAPD/AQAAAAEAAAAOAO//AQAAAAAAAAAPAO//AQABAAAAAAAQAO//AQABAAAAAAARAO//AQABAAAAAAASAO//AQABAAAAAAATAO//AQABAAAAAAAUAO//AQABAAAAAAAVAO//AQABAAAAAAAWAO//AQABAAAAAAAXAO//AQACAAIAAAAXAO7/AQACAAEAAAAXAO3/AQACAAEAAAAXAOz/AQACAAEAAAAXAOv/AQACAAAAAAAWAOv/AQABAAAAAAAVAOv/AQABAAAAAAAUAOv/AQABAAAAAAATAOv/AQABAAAAAAASAOv/AQABAAAAAAARAOv/AQABAAAAAAAQAOv/AQABAAAAAAAPAOv/AQABAAAAAAAOAOv/AQAAAAIAAAAOAOr/AQAAAAEAAAAOAOn/AQAAAAEAAAAOAOj/AQAAAAAAAAAPAOj/AQABAAAAAAAQAOj/AQABAAAAAAARAOj/AQABAAAAAAASAOj/AQABAAAAAAATAOj/AQABAAAAAAAUAOj/AQABAAAAAAAXAOj/AQABAAAAAAAWAOj/AQABAAAAAAAVAOj/AQABAAAAAAAFAPT/AQACAAEAAAAFAPP/AQACAAEAAAAFAPL/AQACAAEAAAAFAPH/AQACAAEAAAAFAPD/AQACAAEAAAAFAO//AQACAAEAAAAFAO7/AQACAAEAAAAFAO3/AQACAAEAAAAFAOz/AQACAAEAAAAFAOv/AQACAAEAAAAFAOr/AQACAAEAAAAFAOn/AQACAAEAAAAFAOj/AQACAAEAAAAFAOf/AQACAAEAAAAFAOb/AQACAAEAAAAFAOX/AQACAAEAAAAFAOT/AQACAAEAAAAFAOP/AQACAAEAAAAFAOL/AQACAAEAAAAFAOH/AQACAAEAAAAFAOD/AQACAAEAAAAFAN//AQACAAEAAAAFAN7/AQAAAAAAAAAGAN7/AQABAAAAAAAHAN7/AQABAAAAAAAIAN7/AQABAAAAAAAJAN7/AQABAAAAAAAKAN7/AQABAAAAAAALAN7/AQABAAAAAAAMAN7/AQABAAAAAAANAN7/AQABAAAAAAAOAN7/AQABAAAAAAAPAN7/AQABAAAAAAAQAN7/AQABAAAAAAARAN7/AQABAAAAAAASAN7/AQABAAAAAAATAN7/AQABAAAAAAAUAN7/AQABAAAAAAAVAN7/AQABAAAAAAAXAN7/AQACAAIAAAAWAN7/AQABAAAAAAAXAN3/AQACAAEAAAAXANz/AQACAAEAAAAXANv/AQACAAEAAAAXANr/AQACAAEAAAAXANn/AQACAAEAAAAXANj/AQACAAEAAAAXANf/AQACAAEAAAAXANb/AQACAAEAAAAXANX/AQACAAEAAAAXANT/AQACAAEAAAAXANP/AQACAAEAAAAXANL/AQAAAAAAAAAYANL/AQABAAAAAAAZANL/AQABAAAAAAAaANL/AQABAAAAAAAbANL/AQABAAAAAAAcANL/AQABAAAAAAAdANL/AQABAAAAAAAeANL/AQABAAAAAAAfANL/AQABAAAAAAAgANL/AQABAAAAAAAhANL/AQABAAAAAAAiANL/AQABAAAAAAAjANL/AQABAAAAAAAkANL/AQABAAAAAAAlANL/AQABAAAAAAAmANL/AQABAAAAAAAnANL/AQABAAAAAAAoANL/AQABAAAAAAApANL/AQABAAAAAAAqANL/AQABAAAAAAArANL/AQABAAAAAAAsANL/AQABAAAAAAAtANL/AQABAAAAAAAYAOj/AQABAAAAAAAZAOj/AQABAAAAAAAaAOj/AQABAAAAAAAbAOj/AQABAAAAAAAcAOj/AQABAAAAAAAdAOj/AQABAAAAAAAeAOj/AQABAAAAAAAfAOj/AQABAAAAAAAgAOj/AQABAAAAAAAhAOj/AQABAAAAAAAiAOj/AQABAAAAAAAjAOj/AQABAAAAAAAkAOj/AQABAAAAAAAlAOj/AQACAAIAAAAlAOf/AQACAAEAAAAlAOb/AQACAAEAAAAlAOX/AQACAAEAAAAlAOT/AQACAAEAAAAlAOP/AQACAAEAAAAlAOL/AQACAAEAAAAlAOH/AQACAAEAAAAlAOD/AQACAAEAAAAlAN//AQACAAEAAAAlAN7/AQACAAEAAAAlAN3/AQACAAEAAAAlANz/AQACAAEAAAAlANv/AQAAAAEAAAAmANv/AQABAAAAAAAnANv/AQABAAAAAAAoANv/AQABAAAAAAApANv/AQABAAAAAAAqANv/AQABAAAAAAArANv/AQABAAAAAAAsANv/AQABAAAAAAAtANv/AQABAAAAAAAuANL/AQABAAAAAAAvANL/AQABAAAAAAAwANL/AQABAAAAAAAxANL/AQABAAAAAAAyANL/AQABAAAAAAAzANL/AQACAAAAAAAzANv/AQACAAIAAAAzANr/AQACAAEAAAAzANn/AQACAAEAAAAzANj/AQACAAEAAAAzANf/AQACAAEAAAAzANb/AQACAAEAAAAzANX/AQACAAEAAAAzANT/AQACAAEAAAAzANP/AQACAAEAAAAyANv/AQABAAAAAAAxANv/AQABAAAAAAAwANv/AQABAAAAAAAvANv/AQABAAAAAAAuANv/AQABAAAAAAAlANr/AQAAAAEAAAAlANn/AQAAAAEAAAAlANj/AQAAAAEAAAAlANf/AQAAAAAAAAAmANf/AQACAAAAAAAmANj/AQACAAEAAAAmANn/AQACAAEAAAAmANr/AQACAAEAAAA=")
+tile_set = ExtResource("1_467l6")
+script = ExtResource("2_0yael")
+
+[node name="coins" type="Node2D" parent="TileMapLayer" unique_id=569120306]
+
+[node name="Area2D" parent="TileMapLayer/coins" unique_id=1589457509 instance=ExtResource("2_7um5s")]
+position = Vector2(40, 40)
+
+[node name="Area2D2" parent="TileMapLayer/coins" unique_id=1194366298 instance=ExtResource("2_7um5s")]
+position = Vector2(96, 40)
+
+[node name="Area2D3" parent="TileMapLayer/coins" unique_id=2063725512 instance=ExtResource("2_7um5s")]
+position = Vector2(176, 0)
+
+[node name="Area2D4" parent="TileMapLayer/coins" unique_id=486804083 instance=ExtResource("2_7um5s")]
+position = Vector2(176, -64)
+
+[node name="Area2D5" parent="TileMapLayer/coins" unique_id=1832246116 instance=ExtResource("2_7um5s")]
+position = Vector2(176, -128)
+
+[node name="Area2D6" parent="TileMapLayer/coins" unique_id=33964665 instance=ExtResource("2_7um5s")]
+position = Vector2(320, -160)
+
+[node name="Area2D7" parent="TileMapLayer/coins" unique_id=1211757191 instance=ExtResource("2_7um5s")]
+position = Vector2(256, -160)
+
+[node name="Area2D8" parent="TileMapLayer/coins" unique_id=1616633240 instance=ExtResource("2_7um5s")]
+position = Vector2(208, -160)
+
+[node name="Area2D9" parent="TileMapLayer/coins" unique_id=2015208964 instance=ExtResource("2_7um5s")]
+position = Vector2(189, -192)
+
+[node name="Area2D10" parent="TileMapLayer/coins" unique_id=365464172 instance=ExtResource("2_7um5s")]
+position = Vector2(216, -224)
+
+[node name="Area2D11" parent="TileMapLayer/coins" unique_id=780683663 instance=ExtResource("2_7um5s")]
+position = Vector2(216, -256)
+
+[node name="Area2D12" parent="TileMapLayer/coins" unique_id=1290058172 instance=ExtResource("2_7um5s")]
+position = Vector2(256, -288)
+
+[node name="Area2D13" parent="TileMapLayer/coins" unique_id=1375716272 instance=ExtResource("2_7um5s")]
+position = Vector2(304, -288)
+
+[node name="Area2D14" parent="TileMapLayer/coins" unique_id=1907638338 instance=ExtResource("2_7um5s")]
+position = Vector2(352, -288)
+
+[node name="Area2D15" parent="TileMapLayer/coins" unique_id=1564261641 instance=ExtResource("2_7um5s")]
+position = Vector2(352, -304)
+
+[node name="Area2D16" parent="TileMapLayer/coins" unique_id=280566713 instance=ExtResource("2_7um5s")]
+position = Vector2(304, -304)
+
+[node name="Area2D17" parent="TileMapLayer/coins" unique_id=1314869042 instance=ExtResource("2_7um5s")]
+position = Vector2(256, -304)
+
+[node name="Area2D18" parent="TileMapLayer/coins" unique_id=1573809827 instance=ExtResource("2_7um5s")]
+position = Vector2(104, -336)
+
+[node name="Area2D19" parent="TileMapLayer/coins" unique_id=1212973825 instance=ExtResource("2_7um5s")]
+position = Vector2(104, -384)
+
+[node name="Area2D20" parent="TileMapLayer/coins" unique_id=1078113205 instance=ExtResource("2_7um5s")]
+position = Vector2(128, -480)
+
+[node name="Area2D21" parent="TileMapLayer/coins" unique_id=1536206770 instance=ExtResource("2_7um5s")]
+position = Vector2(192, -480)
+
+[node name="Area2D22" parent="TileMapLayer/coins" unique_id=1721260893 instance=ExtResource("2_7um5s")]
+position = Vector2(256, -480)
+
+[node name="Area2D23" parent="TileMapLayer/coins" unique_id=1576594103 instance=ExtResource("2_7um5s")]
+position = Vector2(320, -480)
+
+[node name="Area2D24" parent="TileMapLayer/coins" unique_id=280715355 instance=ExtResource("2_7um5s")]
+position = Vector2(384, -480)
+
+[node name="Area2D25" parent="TileMapLayer/coins" unique_id=130901946 instance=ExtResource("2_7um5s")]
+position = Vector2(448, -480)
+
+[node name="Area2D26" parent="TileMapLayer/coins" unique_id=946520278 instance=ExtResource("2_7um5s")]
+position = Vector2(392, -576)
+
+[node name="Area2D27" parent="TileMapLayer/coins" unique_id=514421628 instance=ExtResource("2_7um5s")]
+position = Vector2(392, -624)
+
+[node name="trampolim" type="Node2D" parent="TileMapLayer" unique_id=1042281121]
+
+[node name="knockback_teste" parent="TileMapLayer/trampolim" unique_id=1721220457 instance=ExtResource("3_37jyc")]
+position = Vector2(176, 40)
+
+[node name="knockback_teste2" parent="TileMapLayer/trampolim" unique_id=1685109930 instance=ExtResource("3_37jyc")]
+position = Vector2(360, -160)
+rotation = -1.5707964
+bounce_force = 650.0
+
+[node name="knockback_teste3" parent="TileMapLayer/trampolim" unique_id=758890203 instance=ExtResource("3_37jyc")]
+position = Vector2(104, -480)
+rotation = -1.5707964
+bounce_force = 800.0
+
+[node name="knockback_teste4" parent="TileMapLayer/trampolim" unique_id=2108314877 instance=ExtResource("3_37jyc")]
+position = Vector2(392, -664)
+rotation = -1.5707964
+
+[node name="Player" parent="." unique_id=197686528 instance=ExtResource("4_37jyc")]
+position = Vector2(-64, 32)

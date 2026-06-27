@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cdwgf3emm4kr3" path="res://Assets/sprites/spin_knight_fall.png" id="2_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://by0m8u7l6vrta" path="res://Assets/sprites/spin_knight_walk.png" id="3_dqkch"]
 [ext_resource type="Texture2D" uid="uid://dtyyhe6hhxccj" path="res://Assets/sprites/spin_knight_jump.png" id="3_qlg0r"]
+[ext_resource type="AudioStream" uid="uid://d4bwbw0xeoboe" path="res://Assets/sounds/player_jump.wav" id="6_tuyoq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l71n6"]
 atlas = ExtResource("2_qlg0r")
@@ -191,24 +192,29 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1jxqw"]
-radius = 5.0
 
 [node name="Player" type="CharacterBody2D" unique_id=197686528 groups=["player"]]
 collision_layer = 3
 script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=597237465]
-position = Vector2(0, -17)
+position = Vector2(0, -3)
 sprite_frames = SubResource("SpriteFrames_2hs0m")
 animation = &"run"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=426255357]
-position = Vector2(0, -9)
+position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_1jxqw")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=223615937]
-position = Vector2(0, -9)
+ignore_rotation = false
 zoom = Vector2(4, 4)
-position_smoothing_enabled = true
 rotation_smoothing_enabled = true
+
+[node name="gravity_point" type="Node2D" parent="." unique_id=1291871467]
+position = Vector2(0, 30)
+
+[node name="sfx_jump" type="AudioStreamPlayer2D" parent="." unique_id=1327888957]
+stream = ExtResource("6_tuyoq")
+volume_db = 10.0

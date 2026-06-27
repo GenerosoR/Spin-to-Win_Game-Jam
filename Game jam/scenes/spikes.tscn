@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://c14ularwrromy"]
+
+[ext_resource type="Texture2D" uid="uid://c80ud8q6q32wv" path="res://Spikes/spikes.png" id="1_s0g1x"]
+[ext_resource type="Script" uid="uid://bqbvyglccrdsf" path="res://Spikes/spikes.gd" id="2_nrdsm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nrdsm"]
+atlas = ExtResource("1_s0g1x")
+region = Rect2(0, 0, 146, 141)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8fhau"]
+atlas = ExtResource("1_s0g1x")
+region = Rect2(146, 0, 146, 141)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ds4fp"]
+atlas = ExtResource("1_s0g1x")
+region = Rect2(292, 0, 146, 141)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k4mtd"]
+atlas = ExtResource("1_s0g1x")
+region = Rect2(438, 0, 146, 141)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_688ft"]
+atlas = ExtResource("1_s0g1x")
+region = Rect2(584, 0, 146, 141)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jsphu"]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_nrdsm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8fhau")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ds4fp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4mtd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_688ft")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_44saq"]
+size = Vector2(130, 130)
+
+[node name="Spikes" type="AnimatedSprite2D" unique_id=1583378364]
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_jsphu")
+autoplay = "default"
+frame_progress = 0.2058452
+script = ExtResource("2_nrdsm")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=916371905]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1657403007]
+position = Vector2(0.5, 9.5)
+shape = SubResource("RectangleShape2D_44saq")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

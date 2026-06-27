@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://b1mfaawijjhax"]
+
+[ext_resource type="Script" uid="uid://bdpp0uf6ydrvq" path="res://scripts/mundo.gd" id="1_d3ub6"]
+[ext_resource type="Script" uid="uid://ckhqxf1i4kowi" path="res://scripts/game_manager.gd" id="2_7s2gi"]
+[ext_resource type="AudioStream" uid="uid://cl1fluatx30tc" path="res://musics/Jam_M3_06.wav" id="2_m6lg1"]
+[ext_resource type="TileSet" uid="uid://sqk3fegvwlw6" path="res://Assets/tileset_main.tres" id="3_fj52k"]
+[ext_resource type="Script" uid="uid://bno3y6ade8nut" path="res://scripts/rotation_map.gd" id="4_1t5oo"]
+[ext_resource type="PackedScene" uid="uid://b4s3deuh25nd2" path="res://scenes/knockback_teste.tscn" id="5_m6lg1"]
+[ext_resource type="PackedScene" uid="uid://482vjr66e7p8" path="res://scenes/trampolim2.tscn" id="6_3asx1"]
+[ext_resource type="PackedScene" uid="uid://dmhj2moo1m8u6" path="res://scenes/coin.tscn" id="7_ng1gw"]
+[ext_resource type="PackedScene" uid="uid://bduca52xlgot4" path="res://scenes/next_phase_door.tscn" id="8_yxkm4"]
+[ext_resource type="PackedScene" uid="uid://ca46cr333ndl7" path="res://scenes/player.tscn" id="9_3ebcg"]
+[ext_resource type="PackedScene" uid="uid://cdr08fy00we8r" path="res://scenes/door.tscn" id="9_7s2gi"]
+[ext_resource type="PackedScene" uid="uid://b67kruf1rxeci" path="res://scenes/romao.tscn" id="10_1t5oo"]
+[ext_resource type="PackedScene" uid="uid://jh7k11xbvums" path="res://scenes/fade_transition.tscn" id="10_luu1i"]
+[ext_resource type="PackedScene" uid="uid://m7y88wy2s6uf" path="res://scenes/pausa.tscn" id="11_db1u1"]
+[ext_resource type="PackedScene" uid="uid://c14ularwrromy" path="res://scenes/spikes.tscn" id="14_m6lg1"]
+
+[node name="Mundo" type="Node2D" unique_id=761029203]
+script = ExtResource("1_d3ub6")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1866685169]
+process_mode = 3
+stream = ExtResource("2_m6lg1")
+autoplay = true
+bus = &"Theme01"
+
+[node name="GameManager" type="Node" parent="." unique_id=1757922471]
+unique_name_in_owner = true
+script = ExtResource("2_7s2gi")
+
+[node name="mapa" type="TileMap" parent="." unique_id=360062270]
+z_index = -4096
+tile_set = ExtResource("3_fj52k")
+format = 2
+layer_0/tile_data = PackedInt32Array(65533, 65537, 2, 65534, 65537, 2, 65535, 65537, 2, 0, 65537, 2, 1, 65537, 2, 2, 65537, 2, 3, 65537, 2, 4, 65537, 2, 5, 131073, 2, -65531, 131073, 1, -131067, 131073, 1, -196603, 131073, 1, -262139, 131073, 1, -327675, 131073, 1, -4, 1, 1, -65540, 1, 1, -131076, 1, 1, -196612, 1, 1, -262148, 1, 1, 65532, 1, 2, -327684, 1, 1, -393220, 1, 1, -458756, 1, 1, -524292, 1, 1, -589828, 1, 1, -655364, 1, 0, -655363, 65537, 0, -655362, 65537, 0, -655361, 65537, 0, -720896, 65537, 0, -393211, 131073, 1, -458747, 131073, 1, -524283, 131073, 1, -589819, 131073, 1, -655355, 131073, 1, -720891, 131073, 0, -720892, 65537, 0, -720893, 65537, 0, -720894, 65537, 0, -720895, 65537, 0)
+script = ExtResource("4_1t5oo")
+
+[node name="Romao" parent="mapa" unique_id=2030526968 instance=ExtResource("10_1t5oo")]
+position = Vector2(-22, -136)
+
+[node name="Spikes" parent="mapa" unique_id=1583378364 instance=ExtResource("14_m6lg1")]
+position = Vector2(55, -131)
+
+[node name="knockback_teste" parent="mapa" unique_id=1721220457 instance=ExtResource("5_m6lg1")]
+position = Vector2(21, -11)
+
+[node name="trampolim" parent="mapa" unique_id=1503223041 instance=ExtResource("6_3asx1")]
+position = Vector2(-25, -11)
+
+[node name="Area2D" parent="mapa" unique_id=1589457509 instance=ExtResource("7_ng1gw")]
+position = Vector2(71, -19)
+
+[node name="Area2D2" parent="mapa" unique_id=680725876 instance=ExtResource("7_ng1gw")]
+position = Vector2(56, -19)
+
+[node name="Area2D3" parent="mapa" unique_id=462010037 instance=ExtResource("7_ng1gw")]
+position = Vector2(40, -19)
+
+[node name="Area2D4" parent="mapa" unique_id=1412402443 instance=ExtResource("8_yxkm4")]
+position = Vector2(56, -72)
+
+[node name="Door" parent="mapa" unique_id=288118599 instance=ExtResource("9_7s2gi")]
+position = Vector2(3, -116)
+
+[node name="Player" parent="." unique_id=197686528 instance=ExtResource("9_3ebcg")]
+position = Vector2(0, -36)
+
+[node name="fade_transition" parent="." unique_id=393650323 instance=ExtResource("10_luu1i")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -580.0
+offset_top = -326.0
+offset_right = 580.0
+offset_bottom = 326.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1097833988]
+
+[node name="Pausa" parent="CanvasLayer" unique_id=1204291302 instance=ExtResource("11_db1u1")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = 0.0
+offset_bottom = 0.0
